@@ -15,18 +15,22 @@
         </div>
       <% end %>
       <div class="row">
-        <h1>Create a User</h1>
+        <h1>Create a Prankee</h1>
         <%= form_for(@prankee) do |f| %>
           <div class="form-group full-height">
-         <%= f.label "First Name"%>
-        <%= f.text_field :first_name, required: true, class: "form-control", placeholder: "eg; bob, jimbo"%>
+            <%= f.label "First Name"%>
+            <%= f.text_field :first_name, required: true, class: "form-control", placeholder: "eg; bob, jimbo"%>
           </div>
-        <div class="form-group full-height">
-          <%= label_tag "Message" %>
-          <%= text_field_tag( "message[body]", nil,  class: "form-control")%>
-        </div>
+          <div class="form-group full-height">
+            <%= f.label "Last Name"%>
+            <%= f.text_field :last_name, required: true, class: "form-control", placeholder: "eg; Smith, Swanson"%>
+          </div>
+          <div class="form-group full-height">
+            <%= f.label "Phone Number"%>
+            <%= f.text_field :phone_number, required: true, class: "form-control", placeholder: "EX +15551234"%>
+          </div>
         <div class="text-center full-height" >
-          <%= submit_tag("Message", class: "btn btn-lg")%>
+          <%= submit_tag("Create Contact", class: "btn btn-lg")%>
         </div>
         <%end  %>
       </div>
