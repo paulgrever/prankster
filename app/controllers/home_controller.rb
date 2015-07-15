@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
+    message="hi"
+    number = "hi"
+    @messages = TwilioNotifier.new(message, number).get_messages
+    @prankee = Prankee.new
   end
 
   def message
