@@ -1,6 +1,6 @@
 <div class='container'>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12  col-md-6 col-lg-6">
       <h1>Send a Prank</h1>
       <%= form_tag( message_path, method: :post) do %>
         <div class="form-group full-height">
@@ -15,7 +15,6 @@
           <%= submit_tag("Message", class: "btn btn-lg")%>
         </div>
       <% end %>
-      <div class="row">
         <h1>Create a Prankee</h1>
         <%= form_for(@prankee) do |f| %>
           <div class="form-group full-height">
@@ -34,9 +33,8 @@
           <%= submit_tag("Create Contact", class: "btn btn-lg")%>
         </div>
         <%end  %>
-      </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12  col-md-6 col-lg-6">
       <h1>Messages</h1>
       <div class="row messages">
       <% @messages.each do |m|  %>
