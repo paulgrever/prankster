@@ -43,19 +43,19 @@
         <div class="col-sm-12 bords">
           <p><strong>  <%=m.direction  %> </strong></p>
           <p> <%= m.date_created  %> </p>
-          <% if m.to == "+12027590466" %>
+          <% if m.to == "+12027590466" || m.to == "+19495372518" %>
             <p>TO: Prank Line</p>
           <% elsif @to %>
             <p>TO: <%= @to.first_name %> <%= @to.last_name %> </p>
             <% else %>
               <p>TO: <%= m.to %> </p>
           <% end %>
-          <% if m.from == "+12027590466" %>
+          <% if m.from == "+12027590466" || m.from == "+19495372518" %>
             <p>FROM: Prank Line</p>
           <% elsif @from  %> 
-              <p>TO: <%= @from.first_name %> <%= @from.last_name %> </p>
+              <p>FROM: <%= @from.first_name %> <%= @from.last_name %> </p>
           <% else %>
-            <p>TO: <%= m.from %> </p>
+            <p>FROM: <%= m.from %> </p>
           <% end %>
           <p><%=m.body  %></p>
         </div>
