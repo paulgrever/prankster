@@ -1,6 +1,7 @@
 <div class='container'>
   <div class="row">
     <div class="col-sm-6">
+      <h1>Send a Prank</h1>
       <%= form_tag( message_path, method: :post) do %>
         <div class="form-group full-height">
           <%= label_tag "Phone Number" %>
@@ -37,10 +38,27 @@
     </div>
     <div class="col-sm-6">
       <h1>Messages</h1>
-      <div class="row">
+      <div class="row messages">
       <% @messages.each do |m|  %>
-        <div class="col-sm-12">
+        <%  @to = Prankee.find_by(phone_number: m.to)%>
+        <%  @from = Prankee.find_by(phone_number: m.from)%>
+        <div class="col-sm-12 bords">
           <p><strong>  <%=m.direction  %> </strong></p>
+          <p> <%= m.date_created  %> </p>
+          <% if m.to == "+12027590466" %>
+            <p>TO: Prank Line</p>
+          <% elsif @to %>
+            <p>TO: <%= @to.first_name %> <%= @to.last_name %> </p>
+            <% else %>
+              <p>TO: <%= m.to %> </p>
+          <% end %>
+          <% if m.from == "+12027590466" %>
+            <p>FROM: Prank Line</p>
+          <% elsif @from  %> 
+              <p>TO: <%= @from.first_name %> <%= @from.last_name %> </p>
+          <% else %>
+            <p>TO: <%= m.from %> </p>
+          <% end %>
           <p><%=m.body  %></p>
         </div>
       <% end %>

@@ -1,2 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.messages {
+  height: 88vh;
+  overflow: scroll;
+  margin-bottom: 10px;
+}
+
+.bords {
+  border-bottom: 1px solid gray;
+
+}
