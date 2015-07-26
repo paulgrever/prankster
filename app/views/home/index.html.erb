@@ -3,9 +3,9 @@
     <div class="col-sm-12  col-md-6 col-lg-6">
       <h1>Send a Prank</h1>
       <%= form_tag( message_path, method: :post) do %>
-        <div class="form-group full-height">
-          <%= label_tag "Phone Number" %>
-          <%= text_field_tag( "message[number]", nil,  class: "form-control")%>
+      <div class="form-group">
+      <%= collection_select("message[number]", :id, @prankees, :id, :full_name,
+  options ={:prompt => "-Select a Prankee"}, class:"form-control") %>
         </div>
         <div class="form-group full-height">
           <%= label_tag "Message" %>
