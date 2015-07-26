@@ -8,7 +8,7 @@ class TwilioNotifier
 
   def notify
     client.messages.create(
-      from: '+1 202-759-0466',
+      from: '+1 949-537-2518',
       to: "#{@number}" ,
       body: "#{@message}"
     )
