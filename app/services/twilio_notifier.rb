@@ -1,14 +1,15 @@
 require 'twilio-ruby'
 
 class TwilioNotifier
-  def initialize(message, number)
+  def initialize(message, number, from)
     @number = number
     @message = message
+    @from = from
   end
 
   def notify
     client.messages.create(
-      from: '+1 949-537-2518',
+      from: "#{@from}",
       to: "#{@number}" ,
       body: "#{@message}"
     )

@@ -4,6 +4,9 @@
       <h1>Send a Prank</h1>
       <%= form_tag( message_path, method: :post) do %>
       <div class="form-group">
+        <%= select_tag "message[from_number]", options_for_select([['Washington, DC +1 202-759-0466', "+1 202-759-0466"], ['San Diego, CA +1 949-537-2518', "+1 949-537-2518"], ["Denver, CO +1 720-330-4060", "+1 720-330-4060"]]), class:"form-control"%>
+      </div>
+      <div class="form-group">
       <%= collection_select("message[number]", :id, @prankees, :id, :full_name,
   options ={:prompt => "-Select a Prankee"}, class:"form-control") %>
         </div>
