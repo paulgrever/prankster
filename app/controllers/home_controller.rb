@@ -11,6 +11,6 @@ class HomeController < ApplicationController
     prankee_number = Prankee.find(params[:message][:number][:id].to_i).phone_number
     message = params[:message][:body]
     TwilioNotifier.new(message, prankee_number, from).notify
-    redirect_to root_path
+    redirect_to home_index_path
   end
 end

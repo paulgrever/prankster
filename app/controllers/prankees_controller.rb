@@ -2,7 +2,7 @@ class PrankeesController < ApplicationController
   def create
     prankee = Prankee.new(prankee_params)
     if prankee.save
-      redirect_to root_path
+      redirect_to home_index_path
     else
       render :back
     end
