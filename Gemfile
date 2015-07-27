@@ -13,6 +13,7 @@ gem 'twilio-ruby', '~> 4.2.1'
 gem "figaro"
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "faraday"
+gem "bcrypt"
 
 
 

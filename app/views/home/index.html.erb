@@ -47,14 +47,14 @@
           <p><strong>  <%=m.direction  %> </strong></p>
           <p> <%= m.date_created  %> </p>
           <% if m.to == "+12027590466" || m.to == "+19495372518" || m.to == "+17203304060" %>
-            <p>TO: Prank Line</p>
+            <p>TO: <strong>Prank Line:</strong> <%="#{m.to}"  %></p>
           <% elsif @to %>
             <p>TO: <%= @to.first_name %> <%= @to.last_name %> </p>
             <% else %>
               <p>TO: <%= m.to %> </p>
           <% end %>
           <% if m.from == "+12027590466" || m.from == "+19495372518" || m.from == "+17203304060" %>
-            <p>FROM: Prank Line</p>
+            <p>FROM: <strong>Prank Line:</strong> <%="#{m.from}"  %></p>
           <% elsif @from  %> 
               <p>FROM: <%= @from.first_name %> <%= @from.last_name %> </p>
           <% else %>
